@@ -3,7 +3,6 @@ const fs = require('fs');
 /**
  * 文件读操作 promise 化
  * @param filePath
- * @param content
  */
 export const fileReadPromify: Function = (filePath: String): Promise<any> => {
     return new Promise((resolve, reject) => {
@@ -37,7 +36,6 @@ export const fileWritePromify: Function = (filePath: String, content: String): P
 /**
  * 文件删除操作 promise 化
  * @param filePath
- * @param text
  */
 export const fileDeletePromify: Function = (filePath: String): Promise<any> => {
     return new Promise((resolve, reject) => {
