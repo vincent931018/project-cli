@@ -18,6 +18,10 @@ module.exports = {
                 "style", // Improves formatting, white-space. 仅仅修改了空格、格式缩进、逗号等等，不改变代码逻辑
                 "test" // Adds or modifies tests. 测试用例，包括单元测试、集成测试等
             ]
-        ]
+        ],
+        "type-empty": [2, "never"], // 提交不符合规范时,也可以提交,但是会有警告
+        "subject-empty": [2, "never"], // 提交不符合规范时,也可以提交,但是会有警告
+        "subject-full-stop": [0, "never"],
+        "subject-case": [0, "never"]
     }
 };
