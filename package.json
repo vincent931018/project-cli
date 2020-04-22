@@ -5,13 +5,18 @@
     "main": "index.js",
     "scripts": {
         "start": "ts-node src/index",
-        "precommit": "pretty-quick --pattern 'src/**/*.*(js|ts)' --staged"
+        "precommit": "pretty-quick --pattern 'src/**/*.*(js|ts|jsx)' --staged"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "pretty-quick --pattern='src/**/*.*(js|ts)' --staged",
+            "pre-commit": "lint-staged",
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
+    },
+    "lint-staged": {
+        "*.{js,ts,tsx}": [
+            "pretty-quick --pattern='src/**/*.*(js|ts|jsx)' --staged"
+        ]
     },
     "keywords": [
         "cli",
