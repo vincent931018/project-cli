@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "ts-node src/index",
-        "precommit": "pretty-quick --pattern 'src/**/*.*(js|ts|jsx)' --staged"
+        "precommit": "pretty-quick --pattern 'src/**/*.(js|ts|jsx)' --staged"
     },
     "husky": {
         "hooks": {
@@ -14,8 +14,10 @@
         }
     },
     "lint-staged": {
-        "*.{js,ts,tsx}": [
-            "pretty-quick --pattern='src/**/*.*(js|ts|jsx)' --staged"
+        "*.{js,ts,jsx}": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
         ]
     },
     "keywords": [
