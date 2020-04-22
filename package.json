@@ -10,7 +10,7 @@
     "husky": {
         "hooks": {
             "pre-commit": "pretty-quick --pattern='src/*' --staged",
-            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+            "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
         }
     },
     "keywords": [
