@@ -5,11 +5,11 @@
     "main": "index.js",
     "scripts": {
         "start": "ts-node src/index",
-        "precommit": "pretty-quick --pattern='src/*' --staged"
+        "precommit": "pretty-quick --pattern 'src/**/*.*(js|ts)' --staged"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "pretty-quick --pattern='src/*' --staged",
+            "pre-commit": "pretty-quick --pattern='src/**/*.*(js|ts)' --staged",
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
     },

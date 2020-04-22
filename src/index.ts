@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const util = require("util");
 const child_process = require("child_process");
 const ora = require("ora");
-import { timeLog } from './common/utils';
+import { timeLog } from "./common/utils";
 
 // 选项操作类型
 type OptionsType = String;
@@ -10,7 +10,6 @@ type OptionsType = String;
 // 选项操作列表
 const choicesList: OptionsType[] = ["选项一", "选项二", "选项三", "选项四", "选项五", "选项六"];
 const CUSTOM_OPTION = "自定义选项";
-
 
 const actionsToDo = async (optionStr: string) => {
     const exec = util.promisify(child_process.exec);
@@ -24,8 +23,8 @@ const actionsToDo = async (optionStr: string) => {
     timeLog("🤔等等...");
     await exec("echo end");
     const spinner = ora({
-        text: 'Loading...',
-        color: 'yellow'
+        text: "Loading...",
+        color: "yellow"
     }).start();
     await new Promise(resolve =>
         setTimeout(() => {
@@ -41,7 +40,8 @@ let startTime = 0;
 /**
  * node 命令交互开始
  */
-inquirer.prompt([
+inquirer
+    .prompt([
         {
             type: "list",
             name: "option",
