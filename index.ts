@@ -1,6 +1,8 @@
 const inquirer = require("inquirer");
 const util = require("util");
 const child_process = require("child_process");
+const loadingSpinner = require('loading-spinner');
+
 import { fileWritePromify, fileReadPromify, fileDeletePromify } from './common/utils'
 
 // 选项操作类型
@@ -42,6 +44,11 @@ const actionsToDo = async (optionStr: string) => {
     await fileDeletePromify("./test.txt");
     timeLog("🤔等等...");
     await exec("echo end");
+    loadingSpinner.start(100, {
+        clearChar: true
+    });
+    await new Promise(resolve => setTimeout(() => { resolve() }, 3000));
+    loadingSpinner.stop();
 };
 
 // 记录开始时间 以供后面计算总耗时
