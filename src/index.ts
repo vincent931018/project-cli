@@ -40,7 +40,8 @@ let startTime = 0;
 /**
  * node 命令交互开始
  */
-inquirer.prompt ([
+inquirer
+    .prompt([
         {
             type: "list",
             name: "option",
