@@ -57,7 +57,6 @@ inquirer
     })
     .then(({ option }: any) => {
         startTime = Date.now();
-        console.log(`你选择了选项 ===> ${option}`);
         return actionsToDo(option);
     })
     .then(() => {
@@ -66,5 +65,5 @@ inquirer
         timeLog(`😝操作成功 总共耗时${endTime}s`);
     })
     .catch((err: any) => {
-        console.log(err, "error o");
+        timeLog(`😢 error => ${JSON.stringify(err)}`);
     });
