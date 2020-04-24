@@ -27,6 +27,7 @@
     "author": "caowencheng <845982120@qq.com>",
     "license": "ISC",
     "dependencies": {
+        "chalk": "^4.0.0",
         "husky": "^4.2.5",
         "inquirer": "^7.1.0",
         "lint-staged": "^10.1.7",
