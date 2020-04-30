@@ -1,6 +1,7 @@
-const chalk = require("chalk");
+import * as chalk from "chalk";
+import { TimeLog } from "../../types/global";
 
-export const timeLog = (logInfo: string) => {
+export const log: TimeLog = (logInfo: string) => {
     const nowDate = new Date();
     /* eslint-disable no-console */
     console.log(
