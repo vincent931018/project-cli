@@ -9,7 +9,7 @@ import { log } from "./common/utils";
 const choicesList: OptionsList = ["选项一", "选项二", "选项三", "选项四", "选项五", "选项六"];
 const CUSTOM_OPTION = "自定义选项";
 
-const actionsToDo = async (optionStr: string): Promise<undefined> => {
+const actionsToDo = async (optionStr: string): Promise<boolean> => {
     const exec = util.promisify(childProcess.exec);
     log(`🤔你选择的操作 => ${optionStr}`);
     log(`🤔开始操作一`);
@@ -19,7 +19,7 @@ const actionsToDo = async (optionStr: string): Promise<undefined> => {
     log("😃开始操作三");
     // 比如删除一个文件
     log("🤔等等...");
-    await exec("echo end");
+    await exec("echo 'end'");
     const spinner = ora({
         text: "Loading...",
         color: "yellow"
@@ -30,7 +30,7 @@ const actionsToDo = async (optionStr: string): Promise<undefined> => {
         }, 3000)
     );
     spinner.succeed("操作成功");
-    return new Promise(resolve => resolve());
+    return Promise.resolve(true);
 };
 
 // 记录开始时间 以供后面计算总耗时
